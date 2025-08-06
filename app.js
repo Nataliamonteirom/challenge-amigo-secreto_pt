@@ -27,15 +27,22 @@ function atualizarLista() {
 }
 
 function sortearAmigo() {
-    if (amigos.length === 0) {
-        alert('A lista de amigos está vazia. Adicione nomes para sortear.');
-        return;
-    }
+  if (amigos.length === 0) {
+    alert('A lista de amigos está vazia. Adicione nomes para sortear.');
+    return;
+  }
 
-    let indiceSorteado = Math.floor(Math.random() * amigos.length);
-    let amigoSorteado = amigos[indiceSorteado];
+  const indiceSorteado = Math.floor(Math.random() * amigos.length);
+  const amigoSorteado = amigos[indiceSorteado];
 
-    let resultado = document.getElementById('resultado');
+
+  const resultado = document.getElementById('resultado');
   resultado.innerHTML = `<li>O amigo secreto é: <strong>${amigoSorteado}</strong></li>`;
+
+
+  const lista = document.getElementById('listaAmigos');
+  lista.innerHTML = '';
+
+  amigos.length = 0;
 }
 
